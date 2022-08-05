@@ -15,12 +15,7 @@ describe('EventCard', function() {
   })
 });
 
-describe('EventCard', function() {
- it('Brings up the lat and long', function() {
-  const onClick={lng: 4, lat: 5, eventId: 5, eventObj: 5} 
-  mount(<EventCard onClick={onClick}></EventCard>)
- }) 
-})
+
 
 // Arrange, set-up initial app state
 // Act, take an action 
