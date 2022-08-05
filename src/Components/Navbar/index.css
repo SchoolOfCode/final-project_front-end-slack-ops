@@ -5,11 +5,14 @@
 
 .page-header {
   background-color: var(--secondary);
-  height: 6vh;
+  height: 6%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
 }
 
 .navbutton {
@@ -41,7 +44,7 @@
     var(--secondary)
   );
   width: 20vw;
-  height: 6vh;
+  height: 8%;
 }
 
 @media screen and (max-width: 850px) {
@@ -69,8 +72,7 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 0;
-    top: 0;
+    justify-self: flex-start;
   }
   .navbar-logo {
     height: 100%;

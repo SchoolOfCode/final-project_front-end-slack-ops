@@ -13,7 +13,6 @@ Amplify.configure(awsExports);
 Amplify.configure(awsconfig);
 
 function Explore(signOut, user) {
-
   const [eventsArr, setEventsArr] = useState(dummyEvents);
   const [userInput, setUserInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -25,18 +24,21 @@ function Explore(signOut, user) {
     let searchResults = [];
     for (let i = 0; i < dummyEvents.length; i++) {
       if (dummyEvents[i].eventName.toLowerCase().includes(userInput) === true) {
-        searchResults.push(dummyEvents[i])
-      } else if (dummyEvents[i].mainDescription.toLowerCase().includes(userInput) === true) {
-        searchResults.push(dummyEvents[i])
-      } else if (dummyEvents[i].eventDescription.toLowerCase().includes(userInput) === true) {
-        searchResults.push(dummyEvents[i])
+        searchResults.push(dummyEvents[i]);
+      } else if (
+        dummyEvents[i].mainDescription.toLowerCase().includes(userInput) ===
+        true
+      ) {
+        searchResults.push(dummyEvents[i]);
+      } else if (
+        dummyEvents[i].eventDescription.toLowerCase().includes(userInput) ===
+        true
+      ) {
+        searchResults.push(dummyEvents[i]);
       }
     }
     setEventsArr(searchResults);
   }, [userInput]);
-
-
-
 
   const [location, setLocation] = useState({
     lat: 47.60011001977801,
@@ -90,7 +92,7 @@ function Explore(signOut, user) {
   });
 
   return (
-    <div>
+    <div id="main-explore-div">
       <Navbar />
       <MapContainer
         centerObj={location}

@@ -8,12 +8,12 @@ import { useState } from "react";
   centerObj: { lat: number; lng: number };
 };*/
 
-
 function MapContainer(props) {
   const mapStyles = {
-    height: "94vh",
+    height: "94%",
     width: "100%",
     position: "absolute",
+    bottom: 0,
   };
   const [mapState, setMapState] = useState(null);
 
