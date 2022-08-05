@@ -1,6 +1,6 @@
 import "./index.css";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Amplify, Auth } from "aws-amplify";
+import { Auth } from "aws-amplify";
 // import awsconfig from "../../aws-exports";
 import "@aws-amplify/ui-react/styles.css";
 import { Button } from "@mui/material";
