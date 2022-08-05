@@ -1,16 +1,19 @@
-import { fontStyle } from '../../src/Components/Comment';
+import { mount } from 'cypress/react';
+import { Typography } from '../../src/Components/Comment';
 
 
-describe('My First Test', function () {
+describe('Basic Test', function () {
     it('Basic test', function() {
       expect(true).to.equal(true)
     })
   
   });
 
-  describe('font style', function() {
-    it('Shows in italics', function() {
-      expect(fontStyle).to.equal(undefined)  
+  describe('Comment', function() {
+    it('Checks typography', function() {
+      const style={fontStyle:"italic", marginLeft: 30, borderTop:"1px solid black", marginRight: 100}
+      mount(<Typography style={style}></Typography>)
     })
   });
+
 
