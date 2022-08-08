@@ -38,7 +38,7 @@
   margin-top: 1rem;
   color: rgb(3, 89, 150);
   /* text-shadow: 2px 2px rgb(255, 255, 255); */
-  font-size: clamp(0.5rem, 3vw, 1rem);
+  font-size: clamp(1rem, 3vw, 1.5rem);
   text-decoration: underline;
   font-weight: bolder;
   background-color: transparent;
@@ -65,4 +65,15 @@
   align-items: center;
   justify-content: center;
   object-fit: contain;
+}
+
+.loadFrame {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 75%;
+  z-index: -2;
+  object-fit: cover;
 }

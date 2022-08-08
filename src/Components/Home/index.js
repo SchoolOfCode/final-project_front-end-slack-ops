@@ -3,16 +3,24 @@ import * as React from "react";
 import "./index.css";
 import Promovid from "../../Assets/turnUp-v5-promo.mp4";
 import Drawer from "../Drawer";
-
+import loadFrame from "../../Assets/loadFrame.jpg";
 
 // Landing page code here
+
+// video ?
+// <video> hfsf</video> :
+// <img> loading screen
 
 export default function LandingPage({ handleOpen }) {
   return (
     <div>
-      <video loop autoPlay muted className="vid">
-        <source src={Promovid} type="video/mp4" />
-      </video>
+      {Promovid ? (
+        {/* <video loop autoPlay muted className="vid">
+          <source src={Promovid} type="video/mp4" />
+        </video> */}
+      ) : (
+        <img className="loadFrame" src={loadFrame} alt="loading frame" />
+      )}
       <div className="content">
         <img
           width={"40%"}
