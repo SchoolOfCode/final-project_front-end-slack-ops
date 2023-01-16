@@ -35,7 +35,7 @@ function MainEventCard({ eventObj, xClick, userId }) {
 
   const getTags = async (eventId) => {
     const res = await fetch(
-      `https://turnupdb.herokuapp.com/events/tags/${eventId}`,
+      `https://new-turnup.herokuapp.com/events/tags/${eventId}`,
       {
         mode: "cors",
       }
@@ -47,7 +47,7 @@ function MainEventCard({ eventObj, xClick, userId }) {
 
   const getOrganiser = async (organiserId) => {
     const res = await fetch(
-      `https://turnupdb.herokuapp.com/events/organiser/${organiserId}`,
+      `https://new-turnup.herokuapp.com/events/organiser/${organiserId}`,
       {
         mode: "cors",
       }
@@ -77,7 +77,7 @@ function MainEventCard({ eventObj, xClick, userId }) {
 
   const getPeopleAttending = async (eventId) => {
     const res = await fetch(
-      `https://turnupdb.herokuapp.com/events/attendees/${eventId}`,
+      `https://new-turnup.herokuapp.com/events/attendees/${eventId}`,
       {
         mode: "cors",
       }
@@ -90,7 +90,7 @@ function MainEventCard({ eventObj, xClick, userId }) {
     if (userId !== undefined && eventId !== undefined) {
       const attendeeObj = { eventid: eventId.eventid, userid: userId.userid };
 
-      await fetch(`https://turnupdb.herokuapp.com/events/newatt`, {
+      await fetch(`https://new-turnup.herokuapp.com/events/newatt`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -132,7 +132,11 @@ function MainEventCard({ eventObj, xClick, userId }) {
             variant={attendingButton}
             onClick={() => handleAttendance(eventObj, userId)}
             className="attending-btn"
-            sx={attendingButton==="contained" ? { backgroundColor: "#006390" } : {}}
+            sx={
+              attendingButton === "contained"
+                ? { backgroundColor: "#006390" }
+                : {}
+            }
           >
             I'll be there!
           </Button>

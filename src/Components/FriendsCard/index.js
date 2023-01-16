@@ -9,7 +9,7 @@ export const FriendsCard = ({ friend }) => {
   });
   async function getOneFriend(friendId) {
     const res = await fetch(
-      `https://turnupdb.herokuapp.com/events/user/${friendId}`,
+      `https://new-turnup.herokuapp.com/events/user/${friendId}`,
       {
         mode: "cors",
       }

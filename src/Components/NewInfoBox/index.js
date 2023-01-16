@@ -10,7 +10,7 @@ export function NewInfoBox({ closingFunction, newUserEmail }) {
       email: newUserEmail,
     };
 
-    await fetch(`https://turnupdb.herokuapp.com/events/user`, {
+    await fetch(`https://new-turnup.herokuapp.com/events/user`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -125,7 +125,7 @@ function Explore(signOut, user) {
   async function isUserNew(email) {
     if (email !== "") {
       const res = await fetch(
-        `https://turnupdb.herokuapp.com/events/userem/${email}`,
+        `https://new-turnup.herokuapp.com/events/userem/${email}`,
         {
           mode: "cors",
         }
@@ -157,7 +157,7 @@ function Explore(signOut, user) {
   }
 
   const getEvents = async () => {
-    const res = await fetch(`https://turnupdb.herokuapp.com/events/all`, {
+    const res = await fetch(`https://new-turnup.herokuapp.com/events/all`, {
       mode: "cors",
     });
     const data = await res.json();

@@ -56,7 +56,7 @@ function NewEventForm(signOut, user) {
   async function getUserFromDB(email) {
     if (authUser !== null) {
       const res = await fetch(
-        `https://turnupdb.herokuapp.com/events/userem/${email}`,
+        `https://new-turnup.herokuapp.com/events/userem/${email}`,
         {
           mode: "cors",
         }
@@ -99,7 +99,7 @@ function NewEventForm(signOut, user) {
   async function sendTags(eventId) {
     if (eventId !== null) {
       for (let i = 0; i < tags.length; i++) {
-        await fetch("https://turnupdb.herokuapp.com/events/eventTags", {
+        await fetch("https://new-turnup.herokuapp.com/events/eventTags", {
           method: "POST",
           mode: "cors",
           headers: {
@@ -141,17 +141,20 @@ function NewEventForm(signOut, user) {
       rating: 3,
     };
 
-    const response = await fetch(`https://turnupdb.herokuapp.com/events/all`, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json",
-      },
-      redirect: "follow",
-      referrerPolicy: "no-referrer",
-      body: JSON.stringify(eventObj),
-    });
+    const response = await fetch(
+      `https://new-turnup.herokuapp.com/events/all`,
+      {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify(eventObj),
+      }
+    );
     const newEventData = await response.json();
     setCreatedEventId(newEventData.payload[0].eventid);
   }

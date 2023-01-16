@@ -55,7 +55,7 @@ function Profile() {
   const getUser = async (email) => {
     if (email !== undefined && email !== "") {
       const res = await fetch(
-        `https://turnupdb.herokuapp.com/events/userem/${email}`,
+        `https://new-turnup.herokuapp.com/events/userem/${email}`,
         cors
       );
       const data = await res.json();
@@ -69,15 +69,15 @@ function Profile() {
 
   async function getOrgansiedAttendedAndFriendsEvents(userId) {
     const organisedRes = await fetch(
-      `https://turnupdb.herokuapp.com/events/event-org/${userId}`,
+      `https://new-turnup.herokuapp.com/events/event-org/${userId}`,
       cors
     );
     const attendedRes = await fetch(
-      `https://turnupdb.herokuapp.com/events/att/${userId}`,
+      `https://new-turnup.herokuapp.com/events/att/${userId}`,
       cors
     );
     const friendRes = await fetch(
-      `https://turnupdb.herokuapp.com/events/friends/${userId}`,
+      `https://new-turnup.herokuapp.com/events/friends/${userId}`,
       cors
     );
     const organisedResData = await organisedRes.json();

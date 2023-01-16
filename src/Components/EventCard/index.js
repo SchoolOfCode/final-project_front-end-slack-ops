@@ -29,7 +29,7 @@ export const EventCard = ({ eventObj, onClick, userLoc, whatType, user }) => {
   //function definitions for this component:
   const getTags = async (eventId) => {
     const res = await fetch(
-      `https://turnupdb.herokuapp.com/events/tags/${eventId}`,
+      `https://new-turnup.herokuapp.com/events/tags/${eventId}`,
       {
         mode: "cors",
       }
@@ -39,7 +39,7 @@ export const EventCard = ({ eventObj, onClick, userLoc, whatType, user }) => {
   };
 
   async function deleteAttendedEvent() {
-    await fetch("https://turnupdb.herokuapp.com/events/deluserev", {
+    await fetch("https://new-turnup.herokuapp.com/events/deluserev", {
       method: "DELETE",
       mode: "cors",
       headers: {
@@ -57,7 +57,7 @@ export const EventCard = ({ eventObj, onClick, userLoc, whatType, user }) => {
   }
 
   async function deleteEvent() {
-    await fetch("https://turnupdb.herokuapp.com/events/delev", {
+    await fetch("https://new-turnup.herokuapp.com/events/delev", {
       method: "DELETE",
       mode: "cors",
       headers: {
@@ -70,7 +70,7 @@ export const EventCard = ({ eventObj, onClick, userLoc, whatType, user }) => {
         eventid: Number(eventObj.eventid),
       }),
     });
-    await fetch("https://turnupdb.herokuapp.com/events/deltags", {
+    await fetch("https://new-turnup.herokuapp.com/events/deltags", {
       //
       method: "DELETE",
       mode: "cors",
@@ -84,7 +84,7 @@ export const EventCard = ({ eventObj, onClick, userLoc, whatType, user }) => {
         eventid: Number(eventObj.eventid),
       }),
     });
-    await fetch("https://turnupdb.herokuapp.com/events/delusev", {
+    await fetch("https://new-turnup.herokuapp.com/events/delusev", {
       method: "DELETE",
       mode: "cors",
       headers: {
